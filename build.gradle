@@ -1,0 +1,88 @@
+buildscript {
+
+    ext.gradlePluginVersion = '3.1.4'
+
+    ext.kotlinVersion = '1.2.71'
+    ext.objectboxVersion = '2.0.0'
+    ext.dokkaVersion = '0.9.16'
+    ext.protobufPluginVersion = '0.8.6'
+
+    ext.grpcVersion = '1.13.1'
+    ext.protocVersion = '3.6.0'
+    ext.protocGenVersion = '3.0.0'
+
+    ext.supportLibraryVersion = '28.0.0'
+
+    ext.googleWorkManagerVersion = '1.0.0-alpha09'
+    ext.googleLifecycleVersion = '1.1.1'
+    ext.googlePagingVersion = '1.0.1'
+    ext.googlePlayServiceVersion = '15.0.1'
+    ext.googlePlayServiceAuthVersion = '16.0.0'
+    ext.googleServicesPluginVersion = '4.0.2'
+
+    //Firebase
+    ext.firebaseJobDispatcherVersion = '0.8.5'
+    ext.firebaseAuthVersion = '16.0.3'
+    ext.firebaseCoreVersion = '16.0.3'
+    ext.firebaseDynamicLinkVersion = '16.1.1'
+    ext.firebaseFireStoreVersion = '17.1.0'
+    ext.firebaseMessageVersion = '17.3.2'
+    ext.firebaseCrashlyticsVersion = '2.9.5'
+
+    ext.bubbleSeekBarVersion = '3.19'
+    ext.tedPermissionVersion = '2.2.0'
+    ext.circularLoadingButtonVersion = '1.14.0'
+    ext.klaxonVersion = '3.0.1'
+    ext.fabricVersion = '1.25.4'
+    ext.volleyVersion = '1.1.1'
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            repositories {
+                url 'https://oss.sonatype.org/content/repositories/releases/'
+                url 'https://dl.bintray.com/kotlin/kotlin-dev/'
+                url 'https://maven.fabric.io/public'
+            }
+
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha12'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+        classpath "io.objectbox:objectbox-gradle-plugin:${objectboxVersion}"
+        classpath "com.google.protobuf:protobuf-gradle-plugin:${protobufPluginVersion}"
+        classpath "io.fabric.tools:gradle:${fabricVersion}"
+        classpath "com.google.gms:google-services:${googleServicesPluginVersion}"
+    }
+}
+
+
+plugins {
+    id 'com.gradle.build-scan' version '1.16'
+}
+
+buildScan {
+    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    licenseAgree = 'yes'
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+        }
+
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
