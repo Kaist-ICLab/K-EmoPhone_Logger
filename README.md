@@ -1,3 +1,9 @@
+This repository is deprecated (2019).
+
+We are developing a new app: <a href="https://github.com/Kaist-ICLab/ABC-Logger">ABC-Logger</a>
+
+---
+
 # Data Collector for Smartphone Android (< v.7.0; API 21)
 
 ## Data Types
